@@ -25,7 +25,7 @@ class FirestoreDatabase {
 
   Stream<List<Item>> itemsSoldStream(String? category) => _service.collectionStream(
     path: FirestorePath.searchCategory(category),
-    builder: (data, documentId) => Item.fromMap(data, documentId),
+    builder: (data, documentId) => Item.fromMapItem(data, documentId),
   );
 
   Stream<List<Item>> historyStream() =>_service.collectionStream(

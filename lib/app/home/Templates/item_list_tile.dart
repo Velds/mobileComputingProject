@@ -17,11 +17,20 @@ class ItemListTile extends StatelessWidget {
     final String emailAbsolute = user.email!;
     String tag = '[on listing]';
     if(item.bought) tag = '[bought]';  
+    if (item.sellerUUID == user.uid) 
     return ListTile(
       title: Text(item.name),
-      subtitle: Text(item.category + " " + tag),
-      trailing: const Icon(Icons.chevron_right),
-      onTap: onTap,
+      subtitle: Text(item.category + " " + tag + " <this is your item>"),
+      // trailing: const Icon(Icons.chevron_right),
+      onTap: null,
     );
+    else{
+      return ListTile(
+        title: Text(item.name),
+        subtitle: Text(item.category + " " + tag),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: onTap,
+      );
+    }
   }
 }

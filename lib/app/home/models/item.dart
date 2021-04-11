@@ -3,13 +3,16 @@ import 'package:meta/meta.dart';
 
 @immutable
 class Item extends Equatable {
-  const Item({required this.id, required this.name, required this.price, required this.description, required this.category, required this.bought});
+  const Item({required this.id, required this.name, required this.price, required this.description, required this.category, required this.bought, this.sellerUUID, this.buyerUUID, required this.time});
   final String id;
   final String name;
   final int price;
   final String description;
   final String category; 
   final bool bought; // default Falss
+  final String? sellerUUID; 
+  final String? buyerUUID; 
+  final DateTime time; 
 
   @override
   List<Object> get props => [id, name, price, description, category, bought];
@@ -35,7 +38,8 @@ class Item extends Equatable {
       throw StateError('missing category for product Id: $documentId');
     } 
     final bought = data['bought'] as bool; 
-    return Item(id: documentId, name: name, price: price, description: description, category: category, bought: bought);
+    final time = data['time'] as DateTime;
+    return Item(id: documentId, name: name, price: price, description: description, category: category, bought: bought, time: time);
   }
 
   //TODO: fromMap from the backend
@@ -57,7 +61,10 @@ class Item extends Equatable {
       throw StateError('missing category for product Id: $documentId');
     }
     final bought = data['bought'] as bool;
-    return Item(id: documentId, name: name, price: price, description: description, category: category, bought: bought);
+    final sellerUUID = data['sellerUUID'] as String?; 
+    final buyerUUID = data['buyerUUID'] as String?; 
+    final time = data['time'] as DateTime;
+    return Item(id: documentId, name: name, price: price, description: description, category: category, bought: bought, sellerUUID: sellerUUID, buyerUUID: buyerUUID, time: time);
   }
 
   Map<String, dynamic> toMap() {
@@ -67,6 +74,7 @@ class Item extends Equatable {
       'description': description,
       'category': category, 
       'bought': bought, 
+      'time': time,
     };
   }
   Map<String, dynamic> toMapItem(String uid) {
@@ -77,7 +85,8 @@ class Item extends Equatable {
       'category': category,
       'bought': bought,
       'buyerUUID': 'Not Sold',
-      'sellerUUID': uid
+      'sellerUUID': uid,
+      'time': time, 
     };
   }
 
