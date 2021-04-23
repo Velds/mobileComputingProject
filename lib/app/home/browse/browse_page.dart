@@ -92,6 +92,8 @@ class BrowsePage extends ConsumerWidget {
       List<Item>? othersBuyable) {
     List<Item> temp = [];
     return SingleChildScrollView(
+        child: Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 100.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -109,7 +111,7 @@ class BrowsePage extends ConsumerWidget {
               'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/others.png?alt=media&token=aa451243-584c-48a7-bca9-b5ba2a0ed1f1'),
         ],
       ),
-    );
+    ));
   }
 
   Widget _searchBar() {
