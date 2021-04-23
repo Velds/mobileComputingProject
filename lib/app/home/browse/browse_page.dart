@@ -93,7 +93,7 @@ class BrowsePage extends ConsumerWidget {
     List<Item> temp = [];
     return SingleChildScrollView(
         child: Padding(
-      padding: EdgeInsets.fromLTRB(0, 0, 0, 100.0),
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 60.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -105,7 +105,7 @@ class BrowsePage extends ConsumerWidget {
               'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-og-202010?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1601435256000'),
           _header("Laptops"),
           _buildCarousel("laptops", laptopsBuyable,
-              'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp13touch-space-select-202005?wid=892&hei=820&&qlt=80&.v=1587460552755%27'),
+              'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/laptop.jpg?alt=media&token=06ef5539-8be2-4f39-abaa-9b13df74ba56'),
           _header("Others"),
           _buildCarousel("others", othersBuyable,
               'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/others.png?alt=media&token=aa451243-584c-48a7-bca9-b5ba2a0ed1f1'),
