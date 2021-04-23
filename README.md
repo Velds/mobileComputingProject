@@ -14,26 +14,30 @@ Thus, we opted to adopt a refined and a fine-tuned **production-ready** architec
 
 ## Installation Guide
 
-To run on emulators (e.g., Android Studio AVD): 
-    1. Install necessary dependencies
-        - Install flutter SDK and update the system PATH
-        - Run flutter doctor 
-        - Install android studio
-    2. Configure Android emulator
-        - Enable VM Accelerator for better performance
-        - Select pixel 2 Android oreo as emulator
-    3. Configure VSCode
-        - Download the flutter and dart extensions 
-        - Run the emulator from the VSCode menu
-    3. Alternate: run on Android Studio 
-        - Download the extension for flutter and dart 
-        - Run the emulator from android studio 
-    4. Run the code
-        - Run flutter pub get on the root project folder for dependencies check
-        - Run the code in flutter/dart configuration
-        - After code is compiled to an APK, the emulator will run the APK automatically
+### To run on emulators (e.g., AVD)
+1. Install necessary dependencies
+    - Install flutter SDK and update the system PATH
+    - Run flutter doctor 
+    - Install android studio
+2. Configure Android emulator
+    - Enable VM Accelerator for better performance
+    - Select pixel 2 Android oreo as emulator
+3. Configure VSCode
+    - Download the flutter and dart extensions 
+    - Run the emulator from the VSCode menu
+4. Alternate: Run on Android Studio
+    - Download the extension for flutter and dart 
+    - Run the emulator from android studio 
+5. Run the code
+    - Run flutter pub get on the root project folder for dependencies check
+    - Run the code in flutter/dart configuration
+    - After code is compiled to an APK, the emulator will run the APK automatically
 
-To run on mobile devices
-    1. Download the APK
+### To run on mobile devices
+1. Download the APK
     2. Install the APK by clicking on the .apk file (don't forget to allow 3rd party installation) 
     3. Look at application list for the app and run it 
+
+1. Download the APK
+2. Install the APK by clicking on the .apk file (don't forget to allow 3rd party installation) 
+3. Look at application list for the app and run it 
