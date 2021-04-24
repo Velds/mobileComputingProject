@@ -108,7 +108,7 @@ class BrowsePage extends ConsumerWidget {
               'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/laptop.jpg?alt=media&token=06ef5539-8be2-4f39-abaa-9b13df74ba56'),
           _header("Others"),
           _buildCarousel("others", othersBuyable,
-              'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/others.png?alt=media&token=aa451243-584c-48a7-bca9-b5ba2a0ed1f1'),
+              'https://firebasestorage.googleapis.com/v0/b/mobilecomp-5c1d5.appspot.com/o/peripherals.jfif?alt=media&token=fa28d166-34ad-4331-96e3-1599b89c0e03'),
         ],
       ),
     ));

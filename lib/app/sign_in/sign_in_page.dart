@@ -32,7 +32,7 @@ class SignInPage extends ConsumerWidget {
       },
       child: SignInPageContents(
         viewModel: signInModel,
-        title: 'TraderShop',
+        title: 'Uncle Adilet\'s Department Store',
       ),
     );
   }

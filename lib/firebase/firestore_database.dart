@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:firestore_service/firestore_service.dart';
-import 'package:starter_architecture_flutter_firebase/app/home/models/entry.dart';
 import 'package:starter_architecture_flutter_firebase/app/home/models/item.dart';
 import 'package:starter_architecture_flutter_firebase/firebase/firestore_path.dart';
 
@@ -44,18 +43,6 @@ class FirestoreDatabase {
         builder: (data, documentId) => Item.fromMap(data, documentId),
       );
 
-  // Future<void> deleteItem(Item item) async {
-  //   // delete where entry.itemId == item.itemId
-  //   final allEntries = await entriesStream(item: item).first;
-  //   for (final entry in allEntries) {
-  //     if (entry.itemId == item.id) {
-  //       await deleteEntry(entry);
-  //     }
-  //   }
-  //   // delete item
-  //     await _service.deleteData(path: FirestorePath.item(uid, item.id));
-  // }
-
   Stream<Item> itemStream({required String itemId}) => _service.documentStream(
         path: FirestorePath.item(uid, itemId),
         builder: (data, documentId) => Item.fromMap(data, documentId),
@@ -64,23 +51,5 @@ class FirestoreDatabase {
   Stream<List<Item>> itemsStream() => _service.collectionStream(
         path: FirestorePath.items(uid),
         builder: (data, documentId) => Item.fromMap(data, documentId),
-      );
-
-  Future<void> setEntry(Entry entry) => _service.setData(
-        path: FirestorePath.entry(uid, entry.id),
-        data: entry.toMap(),
-      );
-
-  Future<void> deleteEntry(Entry entry) =>
-      _service.deleteData(path: FirestorePath.entry(uid, entry.id));
-
-  Stream<List<Entry>> entriesStream({Item? item}) =>
-      _service.collectionStream<Entry>(
-        path: FirestorePath.entries(uid),
-        queryBuilder: item != null
-            ? (query) => query.where('itemId', isEqualTo: item.id)
-            : null,
-        builder: (data, documentID) => Entry.fromMap(data, documentID),
-        sort: (lhs, rhs) => rhs.start.compareTo(lhs.start),
       );
 }
