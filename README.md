@@ -35,9 +35,5 @@ Thus, we opted to adopt a refined and a fine-tuned **production-ready** architec
 
 ### To run on mobile devices
 1. Download the APK
-    2. Install the APK by clicking on the .apk file (don't forget to allow 3rd party installation) 
-    3. Look at application list for the app and run it 
-
-1. Download the APK
 2. Install the APK by clicking on the .apk file (don't forget to allow 3rd party installation) 
 3. Look at application list for the app and run it 
